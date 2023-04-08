@@ -15,4 +15,16 @@ public class WifiConnectPlugin: CAPPlugin {
             "value": implementation.echo(value)
         ])
     }
+
+    @objc func connect(_ call: CAPPluginCall) {
+        let ssid = call.getString("ssid");
+        let passphrase = call.getString("passphrase");
+        let saveNetwork = call.getBool("saveNetwork") ?? false;
+        let isWep = call.getBool("isWep") ?? false;
+        if(ssid != nil && passphrase != nil) {
+            implementation.connect(ssid: ssid!, passphrase: passphrase!, saveNetwork: saveNetwork, isWep: isWep, resolve: call.resolve, reject: call.reject);
+        } else {
+            call.reject("SSID and password are mandatory")
+        }
+    }
 }

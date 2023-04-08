@@ -14,6 +14,9 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`connect(...)`](#connect)
+* [Interfaces](#interfaces)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -33,5 +36,44 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
+
+
+### connect(...)
+
+```typescript
+connect(options: { ssid: string; passphrase: string; saveNetwork: boolean; isWep: boolean; }) => Promise<ConnectionState>
+```
+
+| Param         | Type                                                                                     |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| **`options`** | <code>{ ssid: string; passphrase: string; saveNetwork: boolean; isWep: boolean; }</code> |
+
+**Returns:** <code>Promise&lt;<a href="#connectionstate">ConnectionState</a>&gt;</code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### ConnectionState
+
+| Prop        | Type                                                                  |
+| ----------- | --------------------------------------------------------------------- |
+| **`value`** | <code><a href="#connectionstatevalue">ConnectionStateValue</a></code> |
+
+
+### Enums
+
+
+#### ConnectionStateValue
+
+| Members             | Value           |
+| ------------------- | --------------- |
+| **`Success`**       | <code>0</code>  |
+| **`Denied`**        | <code>-1</code> |
+| **`NoConnection`**  | <code>-2</code> |
+| **`UnknownSSID`**   | <code>-3</code> |
+| **`CannotConnect`** | <code>-4</code> |
 
 </docgen-api>

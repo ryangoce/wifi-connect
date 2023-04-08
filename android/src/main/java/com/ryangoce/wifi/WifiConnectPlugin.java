@@ -19,4 +19,16 @@ public class WifiConnectPlugin extends Plugin {
         ret.put("value", implementation.echo(value));
         call.resolve(ret);
     }
+
+    @PluginMethod
+    public void connect(PluginCall call) {
+        // TODO: use android framework to connect
+        String ssid = call.getString("ssid");
+        String passphrase = call.getString("passphrase");
+
+        JSObject ret = new JSObject();
+        ret.put("ssid", implementation.echo(ssid));
+        ret.put("passphrase", implementation.echo(passphrase));
+        call.resolve(ret);
+    }
 }
