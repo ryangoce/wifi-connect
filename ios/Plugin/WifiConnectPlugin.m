@@ -6,4 +6,5 @@
 CAP_PLUGIN(WifiConnectPlugin, "WifiConnect",
            CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(connect, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getCurrentSSID, CAPPluginReturnPromise);
 )

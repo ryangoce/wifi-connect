@@ -27,4 +27,15 @@ public class WifiConnectPlugin: CAPPlugin {
             call.reject("SSID and password are mandatory")
         }
     }
+
+    @objc func getCurrentSSID(_ call: CAPPluginCall) {
+        guard let ssid = implementation.getCurrentSSID() else {
+            call.resolve()
+            return
+        }
+        
+        call.resolve([
+            "name": ssid
+        ])
+    }
 }

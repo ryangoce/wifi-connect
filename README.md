@@ -15,6 +15,7 @@ npx cap sync
 
 * [`echo(...)`](#echo)
 * [`connect(...)`](#connect)
+* [`getCurrentSSID()`](#getcurrentssid)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 
@@ -49,6 +50,17 @@ connect(options: { ssid: string; passphrase: string; saveNetwork: boolean; isWep
 | **`options`** | <code>{ ssid: string; passphrase: string; saveNetwork: boolean; isWep: boolean; }</code> |
 
 **Returns:** <code>Promise&lt;<a href="#connectionstate">ConnectionState</a>&gt;</code>
+
+--------------------
+
+
+### getCurrentSSID()
+
+```typescript
+getCurrentSSID() => Promise<string>
+```
+
+**Returns:** <code>Promise&lt;string&gt;</code>
 
 --------------------
 

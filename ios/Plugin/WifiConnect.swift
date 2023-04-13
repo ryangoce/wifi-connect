@@ -22,6 +22,10 @@ public typealias PluginResultData = [String: Any]
         }
         return ssid;
     }
+
+    @objc public func getCurrentSSID() -> String? {
+        return self._getSSID()
+    }
     
     @objc public func connect(ssid: String, passphrase: String, saveNetwork: Bool, isWep: Bool, resolve: @escaping (PluginResultData) -> Void, reject: @escaping (_ message: String, _ code: String? , _ error: Error? , _ data: PluginResultData? ) -> Void) -> Void {
             

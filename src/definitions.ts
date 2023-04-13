@@ -9,6 +9,8 @@ export interface WifiConnectPlugin {
       saveNetwork: boolean;
       isWep: boolean;
   }): Promise<ConnectionState>
+
+  getCurrentSSID(): Promise<string>
 }
 
 export enum ConnectionStateValue {
